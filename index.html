@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fé em Cristo</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav>
+        <ul class="header-list">
+          <li>
+            <a href="#" class="header-list-link"> Versículo do dia </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-list-link"> As cinco cores </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-list-link"> Visite nossa Igreja </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="webdoor">
+        <video
+          src="../assets/videos/video-webdoor.mp4"
+          autoplay
+          muted
+          loop
+          class="webdoor-video"
+        ></video>
+        <div class="webdoor-wrapper">
+          <p class="webdoor-wrapper-text">
+            "Não se preocupem com nada, mas em todas as orações peçam a Deus o
+            que vocês precisam e orem sempre com o coração agradecido. E a paz
+            de Deus, que ninguém consegue entender, guardará o coração e a mente
+            de vocês, pois vocês estão unidos com Cristo Jesus."
+          </p>
+          <span class="webdoor-wrapper-span">Filipenses 4:6-7</span>
+        </div>
+      </div>
+
+      <div class="daily-verse" id='dailyVerseContainer'>
+        <div class="daily-verse-wrapper">
+          <strong class="daily-verse-title">Receba aqui a sua mensagem diária da <span class="daily-verse-span">Bíblia Sagrada</span> e do evangelho do nosso salvador <span class="daily-verse-span">Jesus Cristo</span></strong>
+          <p class="daily-verse-text">{verseText}</p>
+          <p class="daily-verse-reference">{verseReference}</p>
+        </div>
+        <button onClick={fetchVerse} class="daily-verse-button">
+          <span class="daily-verse-button-span">
+            Carregar Novo Versículo
+          </span>
+        </button>
+      </div>
+
+      <div class="five-colours" id="fiveColoursContainer">
+        <div class="five-colours-text-wrapper">
+          <strong class="five-colours-title">
+            As Cinco Cores: Um Símbolo de <span class="five-colours-span">Fé</span> e <span class="five-colours-span">Identidade</span>
+          </strong>
+          <p class="five-colours-text">
+            Dentro da tradição batista, as cores assumem um papel simbólico
+            significativo, representando os valores e crenças fundamentais
+            compartilhadas por essa comunidade e encapsulando também os princípios
+            centrais da fé cristã.
+          </p>
+          <p class="five-colours-text">
+            As cores - preto, vermelho, amarelo, verde e branco - carregam consigo
+            significados simbólicos profundos, cada uma delas representando
+            aspectos importantes da teologia e prática batista. Veja a seguir o
+            que cada uma delas significa:
+          </p>
+        </div>
+  
+        <ul class="five-colours-list" id="fiveColoursList">
+          <li class="five-colours-list-item-right">
+            <img
+              class="five-colours-list-item-image"
+              src="../assets/images/esqueleto.jpg"
+            />
+  
+            <div class="five-colours-list-item-text-wrapper">
+              <strong class="five-colours-list-item-title-black">
+                Preto
+              </strong>
+  
+              <p class="five-colours-list-item-text">
+                Inicialmente, pode parecer uma escolha sombria, mas dentro da
+                perspectiva batista, ele representa a realidade do pecado e da
+                escuridão que permeiam o mundo. É um lembrete da necessidade de
+                redenção e salvação em Jesus Cristo.
+              </p>
+            </div>
+          </li>
+  
+          <li class="five-colours-list-item-left">
+            <img
+             class="five-colours-list-item-image"
+              src="../assets/images/cruz.jpg"
+            />
+  
+            <div class="five-colours-list-item-text-wrapper">
+              <strong class="five-colours-list-item-title-red">
+                Vermelho
+              </strong>
+  
+              <p class="five-colours-list-item-text">
+                Simbolizando o sangue derramado de Cristo na cruz, é uma
+                representação vívida do sacrifício supremo de Cristo pela
+                humanidade. Essa cor destaca a centralidade da morte e
+                ressurreição de Jesus como o cerne da fé cristã e a fonte de
+                esperança para todos os crentes.
+              </p>
+            </div>
+          </li>
+  
+          <li class="five-colours-list-item-right">
+            <img
+             class="five-colours-list-item-image"
+              src="../assets/images/garota.jpg"
+            />
+  
+            <div class="five-colours-list-item-text-wrapper">
+              <strong class="five-colours-list-item-title-yellow">
+                Amarelo
+              </strong>
+  
+              <p class="five-colours-list-item-text">
+                Brilhante e radiante, representa a luz do Evangelho. É um lembrete
+                do chamado dos cristãos batistas para proclamar a mensagem
+                redentora de Cristo a todas as nações, compartilhando a esperança
+                e o amor de Deus com o mundo.
+              </p>
+            </div>
+          </li>
+  
+          <li class="five-colours-list-item-left">
+            <img
+             class="five-colours-list-item-image"
+              src="../assets/images/trigo.jpg"
+            />
+  
+            <div class="five-colours-list-item-text-wrapper">
+              <strong class="five-colours-list-item-title-green">
+                Verde
+              </strong>
+  
+              <p class="five-colours-list-item-text">
+                Simbolizando crescimento e renovação, representa o contínuo
+                desenvolvimento espiritual e a busca por uma vida de discipulado e
+                maturidade na fé. É um lembrete da importância do crescimento
+                espiritual contínuo e da renovação na jornada cristã.
+              </p>
+            </div>
+          </li>
+  
+          <li class="five-colours-list-item-right">
+            <img
+             class="five-colours-list-item-image"
+              src="../assets/images/biblia.jpg"
+            />
+  
+            <div class="five-colours-list-item-text-wrapper">
+              <strong class="five-colours-list-item-title-white">
+                Branco
+              </strong>
+  
+              <p class="five-colours-list-item-text">
+                Representando pureza e santidade, destaca a aspiração dos batistas
+                por uma vida de retidão e conformidade com os princípios divinos.
+                É um lembrete da chamada para viver em santidade e refletir a luz
+                de Cristo em um mundo necessitado.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-wrapper">
+        <div class="footer-text-wrapper">
+          <strong class="footer-title">Projeto Fé em Cristo</strong>
+          <p class="footer-text">
+            Feito por Luís Antonio - Todos os direitos reservados
+          </p>
+        </div>
+
+        <div class="footer-link-wrapper">
+          <a
+            class="footer-github"
+            href="https://github.com/LagAntunes"
+            target="_blank"
+          ></a>
+
+          <a
+            class="footer-linkedin"
+            href="https://www.linkedin.com/in/luis-antonio-garcia-antunes/"
+            target="_blank"
+          ></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
