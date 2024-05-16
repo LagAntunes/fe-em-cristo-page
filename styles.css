@@ -702,21 +702,21 @@ html {
 }
 
 .footer-github {
-  background-image: url("../../assets/images/github.svg");
+  background-image: url("./assets/images/github.svg");
   background-size: contain;
 }
 
 .footer-github:hover {
-  background-image: url("../../assets/images/github-hover.svg");
+  background-image: url("./assets/images/github-hover.svg");
 }
 
 .footer-linkedin {
-  background-image: url("../../assets/images/linkedin.svg");
+  background-image: url("./assets/images/linkedin.svg");
   background-size: contain;
 }
 
 .footer-linkedin:hover {
-  background-image: url("../../assets/images/linkedin-hover.svg");
+  background-image: url("./assets/images/linkedin-hover.svg");
 }
 
 /* Responsivo */
