@@ -1,3 +1,4 @@
+/*Estilos gerais*/
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +13,12 @@ body {
   background-image: url("./assets/images/background-image.svg");
 }
 
-/*Estilo do header*/
+html {
+  scroll-behavior: smooth;
+}
+/***********************/
+
+/*Estilo do Header*/
 .header {
   width: 100%;
   height: 50px;
@@ -63,10 +69,6 @@ body {
 
 /* Responsivo */
 @media (max-width: 640px) {
-  .header-list {
-    padding: 0 10px;
-  }
-
   .header-list-link {
     font-size: 15px;
     text-align: center;
@@ -74,7 +76,7 @@ body {
 }
 /***********************/
 
-/*Estilo do webdoor*/
+/*Estilo do Webdoor*/
 .webdoor {
   width: 100vw;
   height: 750px;
@@ -148,7 +150,7 @@ body {
 }
 /***********************/
 
-/*Estilo do daily verse*/
+/*Estilo do DailyVerse*/
 .daily-verse {
   display: flex;
   flex-direction: row;
@@ -314,11 +316,12 @@ body {
   .daily-verse {
     height: 550px;
     width: 336px;
+    padding-top: 50px;
   }
 }
 /***********************/
 
-/*Estilo do five colours*/
+/*Estilo do FiveColours*/
 .five-colours {
   width: 100%;
   height: auto;
@@ -378,23 +381,14 @@ body {
   gap: 20px;
   width: 100%;
   height: auto;
-  /*opacity: 0;
-  transition: opacity 2s ease, transform 1.5s ease;*/
 }
 
 .five-colours-list-item-left {
   flex-direction: row-reverse;
-  /*transform: translateX(-500px);*/
 }
 
 .five-colours-list-item-right {
   flex-direction: row;
-  /*transform: translateX(500px);*/
-}
-
-.appear {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .five-colours-list-item-image {
@@ -464,10 +458,10 @@ body {
   }
 
   .five-colours-list-item-title-black,
-.five-colours-list-item-title-red,
-.five-colours-list-item-title-yellow,
-.five-colours-list-item-title-green,
-.five-colours-list-item-title-whitee {
+  .five-colours-list-item-title-red,
+  .five-colours-list-item-title-yellow,
+  .five-colours-list-item-title-green,
+  .five-colours-list-item-title-white {
     text-align: center;
   }
 }
@@ -503,7 +497,156 @@ body {
 }
 /***********************/
 
-/*Estilo do footer*/
+/*Estilo do VisitUs*/
+.visit-us {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 70px auto;
+}
+
+.visit-us-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.visit-us-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  height: 100%;
+}
+
+.visit-us-text-title {
+  font-size: 28px;
+  line-height: 100%;
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.visit-us-text-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.visit-us-text-list-item,
+.visit-us-text-list-item-adress {
+  list-style: none;
+  font-size: 18px;
+  line-height: 100%;
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+}
+
+.visit-us-text-list-item-adress {
+  padding-top: 30px;
+}
+
+.visit-us-text-list-span {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+.visit-us-text-list-link {
+  width: fit-content;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+
+  background-image: linear-gradient(
+    to right,
+    mediumseagreen,
+    mediumseagreen 50%,
+    goldenrod 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
+  z-index: 9;
+  transition: background-position ease-in-out 0.3s;
+}
+
+.visit-us-text-list-link:hover {
+  background-position: 0;
+}
+
+/* Responsivo */
+@media (max-width: 1365px) {
+  .visit-us-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .visit-us-text {
+    width: 100%;
+    height: auto;
+    padding-bottom: 30px;
+  }
+}
+/***********************/
+
+/*Estilo do Slider*/
+.slider {
+  width: 60%;
+  height: 600px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  background: gold !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: white !important;
+}
+
+/* Responsivo */
+@media (max-width: 1365px) {
+  .slider {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 639px) {
+  .slider {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 250px;
+  }
+}
+
+/***********************/
+
+/*Estilo do Footer*/
 .footer {
   display: flex;
   justify-content: center;

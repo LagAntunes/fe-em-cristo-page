@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Arquivo CSS do Swiper.js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <!-- Arquivo CSS do AOS.css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Arquivo CSS interno -->
     <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap"
-      rel="stylesheet"
-    />
+    
     <title>Fé em Cristo</title>
   </head>
 
@@ -19,15 +20,21 @@
       <nav>
         <ul class="header-list">
           <li>
-            <a href="#" class="header-list-link"> Versículo do dia </a>
+            <a href="#dailyVerseContainer" class="header-list-link">
+              Versículo do dia
+            </a>
           </li>
 
           <li>
-            <a href="#" class="header-list-link"> As cinco cores </a>
+            <a href="#fiveColoursContainer" class="header-list-link">
+              As cinco cores
+            </a>
           </li>
 
           <li>
-            <a href="#" class="header-list-link"> Visite nossa Igreja </a>
+            <a href="#visitUsContainer" class="header-list-link">
+              Visite nossa Igreja
+            </a>
           </li>
         </ul>
       </nav>
@@ -53,50 +60,55 @@
         </div>
       </div>
 
-      <div class="daily-verse" id='dailyVerseContainer'>
+      <div class="daily-verse" id="dailyVerseContainer">
         <div class="daily-verse-wrapper">
-          <strong class="daily-verse-title">Receba aqui a sua mensagem diária da <span class="daily-verse-span">Bíblia Sagrada</span> e do evangelho do nosso salvador <span class="daily-verse-span">Jesus Cristo</span></strong>
-          <p class="daily-verse-text">{verseText}</p>
-          <p class="daily-verse-reference">{verseReference}</p>
+          <strong class="daily-verse-title">
+            Receba aqui a sua mensagem diária da
+            <span class="daily-verse-span">Bíblia Sagrada</span> e do evangelho
+            do nosso salvador
+            <span class="daily-verse-span">Jesus Cristo</span>
+          </strong>
+          <p class="daily-verse-text" id="verseText">Carregando...</p>
+          <p class="daily-verse-reference" id="verseReference"></p>
         </div>
-        <button onClick={fetchVerse} class="daily-verse-button">
-          <span class="daily-verse-button-span">
-            Carregar Novo Versículo
-          </span>
+        <button onclick="fetchVerse()" class="daily-verse-button">
+          <span class="daily-verse-button-span"> Carregar Novo Versículo </span>
         </button>
       </div>
 
       <div class="five-colours" id="fiveColoursContainer">
         <div class="five-colours-text-wrapper">
           <strong class="five-colours-title">
-            As Cinco Cores: Um Símbolo de <span class="five-colours-span">Fé</span> e <span class="five-colours-span">Identidade</span>
+            As Cinco Cores: Um Símbolo de
+            <span class="five-colours-span">Fé</span> e
+            <span class="five-colours-span">Identidade</span>
           </strong>
           <p class="five-colours-text">
             Dentro da tradição batista, as cores assumem um papel simbólico
             significativo, representando os valores e crenças fundamentais
-            compartilhadas por essa comunidade e encapsulando também os princípios
-            centrais da fé cristã.
+            compartilhadas por essa comunidade e encapsulando também os
+            princípios centrais da fé cristã.
           </p>
           <p class="five-colours-text">
-            As cores - preto, vermelho, amarelo, verde e branco - carregam consigo
-            significados simbólicos profundos, cada uma delas representando
-            aspectos importantes da teologia e prática batista. Veja a seguir o
-            que cada uma delas significa:
+            As cores - preto, vermelho, amarelo, verde e branco - carregam
+            consigo significados simbólicos profundos, cada uma delas
+            representando aspectos importantes da teologia e prática batista.
+            Veja a seguir o que cada uma delas significa:
           </p>
         </div>
-  
-        <ul class="five-colours-list" id="fiveColoursList">
-          <li class="five-colours-list-item-right">
+
+        <ul class="five-colours-list">
+          <li class="five-colours-list-item-right" data-aos="fade-right">
             <img
               class="five-colours-list-item-image"
               src="../assets/images/esqueleto.jpg"
             />
-  
+
             <div class="five-colours-list-item-text-wrapper">
               <strong class="five-colours-list-item-title-black">
                 Preto
               </strong>
-  
+
               <p class="five-colours-list-item-text">
                 Inicialmente, pode parecer uma escolha sombria, mas dentro da
                 perspectiva batista, ele representa a realidade do pecado e da
@@ -105,18 +117,18 @@
               </p>
             </div>
           </li>
-  
-          <li class="five-colours-list-item-left">
+
+          <li class="five-colours-list-item-left" data-aos="fade-left">
             <img
-             class="five-colours-list-item-image"
+              class="five-colours-list-item-image"
               src="../assets/images/cruz.jpg"
             />
-  
+
             <div class="five-colours-list-item-text-wrapper">
               <strong class="five-colours-list-item-title-red">
                 Vermelho
               </strong>
-  
+
               <p class="five-colours-list-item-text">
                 Simbolizando o sangue derramado de Cristo na cruz, é uma
                 representação vívida do sacrifício supremo de Cristo pela
@@ -126,67 +138,164 @@
               </p>
             </div>
           </li>
-  
-          <li class="five-colours-list-item-right">
+
+          <li class="five-colours-list-item-right" data-aos="fade-right">
             <img
-             class="five-colours-list-item-image"
+              class="five-colours-list-item-image"
               src="../assets/images/garota.jpg"
             />
-  
+
             <div class="five-colours-list-item-text-wrapper">
               <strong class="five-colours-list-item-title-yellow">
                 Amarelo
               </strong>
-  
+
               <p class="five-colours-list-item-text">
-                Brilhante e radiante, representa a luz do Evangelho. É um lembrete
-                do chamado dos cristãos batistas para proclamar a mensagem
-                redentora de Cristo a todas as nações, compartilhando a esperança
-                e o amor de Deus com o mundo.
+                Brilhante e radiante, representa a luz do Evangelho. É um
+                lembrete do chamado dos cristãos batistas para proclamar a
+                mensagem redentora de Cristo a todas as nações, compartilhando a
+                esperança e o amor de Deus com o mundo.
               </p>
             </div>
           </li>
-  
-          <li class="five-colours-list-item-left">
+
+          <li class="five-colours-list-item-left" data-aos="fade-left">
             <img
-             class="five-colours-list-item-image"
+              class="five-colours-list-item-image"
               src="../assets/images/trigo.jpg"
             />
-  
+
             <div class="five-colours-list-item-text-wrapper">
               <strong class="five-colours-list-item-title-green">
                 Verde
               </strong>
-  
+
               <p class="five-colours-list-item-text">
                 Simbolizando crescimento e renovação, representa o contínuo
-                desenvolvimento espiritual e a busca por uma vida de discipulado e
-                maturidade na fé. É um lembrete da importância do crescimento
+                desenvolvimento espiritual e a busca por uma vida de discipulado
+                e maturidade na fé. É um lembrete da importância do crescimento
                 espiritual contínuo e da renovação na jornada cristã.
               </p>
             </div>
           </li>
-  
-          <li class="five-colours-list-item-right">
+
+          <li class="five-colours-list-item-right" data-aos="fade-right">
             <img
-             class="five-colours-list-item-image"
+              class="five-colours-list-item-image"
               src="../assets/images/biblia.jpg"
             />
-  
+
             <div class="five-colours-list-item-text-wrapper">
               <strong class="five-colours-list-item-title-white">
                 Branco
               </strong>
-  
+
               <p class="five-colours-list-item-text">
-                Representando pureza e santidade, destaca a aspiração dos batistas
-                por uma vida de retidão e conformidade com os princípios divinos.
-                É um lembrete da chamada para viver em santidade e refletir a luz
-                de Cristo em um mundo necessitado.
+                Representando pureza e santidade, destaca a aspiração dos
+                batistas por uma vida de retidão e conformidade com os
+                princípios divinos. É um lembrete da chamada para viver em
+                santidade e refletir a luz de Cristo em um mundo necessitado.
               </p>
             </div>
           </li>
         </ul>
+      </div>
+
+      <div class="visit-us" id="visitUsContainer">
+        <div class="visit-us-wrapper">
+          <div class="swiper-container slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  class="slider-image"
+                  src="https://scontent.fcwb2-3.fna.fbcdn.net/v/t39.30808-6/417453405_809572741210290_4217827326221770324_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=wGRqCQbVHZMQ7kNvgFg7aKM&_nc_ht=scontent.fcwb2-3.fna&oh=00_AYB-H_577DR_cuDfPte_qvw7nwhXWZyjdJRv44o1F07T5Q&oe=664873C9"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slider-image"
+                  src="https://scontent.fcwb2-3.fna.fbcdn.net/v/t39.30808-6/417509127_826501542850743_8481976079611831469_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=mAecDIpOzNYQ7kNvgHmiC6m&_nc_ht=scontent.fcwb2-3.fna&oh=00_AYBJUSmG1St30xra999YhShR3cNQiYhk_zkb_DuCmoOuNw&oe=66486E7E"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slider-image"
+                  src="https://scontent.fcwb2-3.fna.fbcdn.net/v/t39.30808-6/441163534_872255328275364_1766361674554832558_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=-yAJD2jvPQ8Q7kNvgHpzLz9&_nc_ht=scontent.fcwb2-3.fna&oh=00_AYCA0rN_WGTyV_RdODjr6PQwtUb7kU3pM6yXOd4YrDgdIg&oe=66486326"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slider-image"
+                  src="https://scontent.fcwb2-3.fna.fbcdn.net/v/t39.30808-6/434593966_845335274300703_3633242361456797094_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=UwcyY_z1cusQ7kNvgE21qag&_nc_ht=scontent.fcwb2-3.fna&oh=00_AYBs9iBGCJnssGKJLNmjfCRjh8P24rNZkFKadc9ooij5ZA&oe=66487A3E"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slider-image"
+                  src="https://scontent.fcwb2-3.fna.fbcdn.net/v/t39.30808-6/417471588_809578044543093_2570164206238500120_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=55ngEnJ9_6IQ7kNvgFh3dKd&_nc_ht=scontent.fcwb2-3.fna&oh=00_AYC-tKqAKFed6fZAe2HnkhilaUnw4fh5ScUWXc-qdf_7LA&oe=664869A5"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slider-image"
+                  src="https://scontent.fcwb2-3.fna.fbcdn.net/v/t39.30808-6/420200976_844029561097941_3961413270377651277_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Fhvm1pthveIQ7kNvgFmZxnT&_nc_ht=scontent.fcwb2-3.fna&oh=00_AYBbiKy25VUqHgJrg_zNtOdSu4GrCHJeG3r7sXcxem4ekg&oe=66486A8F"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slider-image"
+                  src="https://scontent.fcwb2-3.fna.fbcdn.net/v/t39.30808-6/438093023_862612665906297_3529229049267914306_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=4kR_DX3Vk6gQ7kNvgHMAq5P&_nc_ht=scontent.fcwb2-3.fna&oh=00_AYC8lLNLyGqc2AUwhUCfH3GRsaycYS1S9CQLjI_W8jC9ig&oe=66487855"
+                />
+              </div>
+              <!-- Adicione mais slides conforme necessário -->
+            </div>
+            <div class="swiper-pagination"></div>
+            <!-- Adicione a paginação se desejar -->
+          </div>
+
+          <div class="visit-us-text">
+            <strong class="visit-us-text-title">
+              Acompanhe nossos horários e nos faça uma visita:
+            </strong>
+
+            <ul class="visit-us-text-list">
+              <li class="visit-us-text-list-item">
+                Quarta-feira:
+                <span class="visit-us-text-list-span">19:30 - 21:30</span>
+              </li>
+              <li class="visit-us-text-list-item">
+                Sábado (Clube Bíblico):
+                <span class="visit-us-text-list-span">14:00 - 16:00</span>
+              </li>
+              <li class="visit-us-text-list-item">
+                Domingo:
+                <span class="visit-us-text-list-span">09:30 - 11:00</span> e
+                <span class="visit-us-text-list-span">19:00 - 21:00</span>
+              </li>
+              <li class="visit-us-text-list-item-adress">
+                Endereço:
+                <span class="visit-us-text-list-span">
+                  R. Jardim Olinda, 40 - Sítio Cercado, Curitiba - PR, 81935-020
+                </span>
+              </li>
+              <li class="visit-us-text-list-item">
+                Telefone:
+                <a href="tel:(41) 99921-8701" class="visit-us-text-list-link"
+                  >(41) 99921-8701</a
+                >
+              </li>
+              <li class="visit-us-text-list-item">
+                Redes sociais:
+                <a
+                  href="https://www.facebook.com/igrejabatistadafeemcristo/"
+                  target="_blank"
+                  class="visit-us-text-list-link"
+                  >Acesse nosso Facebook clicando aqui</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -214,5 +323,12 @@
         </div>
       </div>
     </footer>
+
+    <!-- Arquivo JavaScript do Swiper.js -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Arquivo JavaScript do AOS.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Arquivo JavaScript interno -->
+    <script src="./main.js"></script>
   </body>
 </html>
